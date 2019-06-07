@@ -1,0 +1,3 @@
+div .Coluna1 , div.Coluna2 , div .Coluna3, div .Coluna4, div .Coluna5, div .Coluna6{
+  display: flex;
+}
