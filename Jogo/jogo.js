@@ -66,18 +66,24 @@ for(i = 0; i < 24; i++){
 }
 for(i = 0; i < 24; i++){
     let el = document.createElement('div');
-    let att = document.createAttribute('class');
-    att.value = "elemento";
-    el.setAttributeNode(att);
+    //let id = document.createAttribute('id');
+    el.setAttribute('id', 'carta'+i);
+    el.setAttribute('class', 'elemento');
     if(arrCartao[i].img == undefined){
         let p = document.createElement('p');
         p.innerText = arrCartao[i].descricao;
+        if( !arrCartao[i].virada)
+            p.style.display = "none";
         el.appendChild(p);
     }
     else{
         el.style.backgroundImage = arrCartao[i].virada ? "url("+arrCartao[i].img+")" : "url(../imgs/verso.jpg)";
-        el.addEventListener("click", function(e){ console.log(e.currentTarget); })
     }
+    el.addEventListener("click", function(e){
+        let id = e.currentTarget.getAttribute('id').substr(5);
+        console.log(id);
+        console.log(arrCartao[id]);
+    });
     root.appendChild(el);
 }
 
@@ -103,12 +109,16 @@ let resizing = function(event){
     root.style.gridGap = margemCartao;
     root.style.position = "absolute";
     root.style.left = (wWidth - gradeWidth)/2+"px";
-    root.style.top = "40px";
-
-    return 1;
+    root.style.top = "60px";
+    root.style.fontSize = margemCartao*4/6+"px";
+    root.style.backgroundSize = wWidth+"px "+window.innerHeight+"px";
 }
 
 window.onresize = resizing;
 resizing();
+
+let voltarBtn = document.getElementById('voltar');
+voltarBtn.addEventListener("mouseenter", function(e){e.currentTarget.setAttribute('src', '../imgs/aprender-conteudo-hover.png');});
+voltarBtn.addEventListener("mouseleave", function(e){e.currentTarget.setAttribute('src', '../imgs/aprender-conteudo.png');});
 
 

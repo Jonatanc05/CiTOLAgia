@@ -1,4 +1,13 @@
- #divGrade{
+body{
+  background-color: lightgreen;
+  background-image: url(../imgs/background/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center 0;
+  background-attachment: fixed;
+}
+
+#divGrade{
   display: grid;
   grid-template-columns: repeat(6,200px);
   grid-template-rows: repeat(4,200px);
@@ -8,5 +17,26 @@
 .elemento{
   background-image: url(../imgs/verso.jpg);
   background-size: contain;
-  border: 1px solid black;
+  padding: 5px;
+  box-shadow: 10px 10px #052b12;
+  transition: 400ms ease all;
+}
+.elemento:hover{
+  box-shadow: 7px 7px #052b12;
+  border: 3px solid #20b050;
+  cursor: pointer;
+}
+.elemento:active{
+  position: relative;
+  left: 5px;
+  top: 5px;
+  box-shadow: 1px 1px #052b12;
+}
+
+#voltar{
+  position: absolute;
+  left: 15px;
+}
+#voltar:hover{
+  cursor: pointer;
 }
