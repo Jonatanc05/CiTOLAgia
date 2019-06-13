@@ -5,20 +5,36 @@
     <link rel="stylesheet" href="Esquema/esquema.css">
     <link rel="icon" href="imgs/background/celula.png">
     <title>Trabalho BIO (G3) - Esquema</title>
+    <link href="https://fonts.googleapis.com/css?family=Chewy&display=swap" rel="stylesheet">
   </head>
   <body>
 
-    <img src="imgs/aprender-conteudo.png" id="ir" href="Jogo/jogo.html">
-
-    <div id="root">
-      <div class="esquema" id="animal"></div>
-      <div class="esquema" id="vegetal"></div>
-      <div class="esquema" id="procarionte"></div>
+    <a href="Jogo/jogo.html"><img src="imgs/aprender-conteudo.png" id="ir" href="Jogo/jogo.html"></a>
+    <div>
+      <div id="root">
+        <div class="setaDiv" id="esquerdaDiv">
+          <img class="setaImg" id="esquerdaImg" src="imgs/seta-esquerda.png" alt="seta para a esquerda">
+        </div>
+        <div class="esquema" id="animal">
+          <h1>Célula Animal</h1>
+        </div>
+        <div class="esquema" id="vegetal">
+          <h1>Célula Vegetal</h1>
+        </div>
+        <div class="esquema" id="procarionte">
+            <h1>Célula Procarionte</h1>
+        </div>
+        <div class="setaDiv" id="direitaDiv">
+            <img class="setaImg" id="direitaImg" src="imgs/seta-direita.png" alt="seta para a direita">
+          </div>
+      </div>
     </div>
 
     <div id="hist">
       <h2>História da Célula</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat nisi id sapien sollicitudin, ut euismod lectus fringilla. Nulla ultricies, metus non efficitur placerat, mi mi volutpat leo, id consectetur tellus ex ac quam. Ut in justo accumsan, ornare felis eu, ultricies sem. Cras condimentum nisl at dui dignissim, at pretium ipsum scelerisque. Praesent ac diam eget mi faucibus aliquam ullamcorper eget velit. Donec in elit quis metus congue fermentum. Cras euismod vestibulum felis, eget dignissim justo scelerisque quis. Vivamus viverra enim id justo venenatis sollicitudin eget at eros. Vestibulum neque tellus, dictum eu eros sit amet, aliquam ornare mi. Nullam vestibulum neque ipsum, et venenatis diam consectetur ut. Etiam fringilla aliquet turpis, volutpat dapibus justo.</p>
+      <p>A história da célula tem seu início por volta do ano de 1665 com o cientista inglês Robert Hooke (1635 - 1703), que, ao observar finas fatias de cortiça, com o auxílio de um microscópio, verificou que elas eram compostas por pequenas cavidades, dando-lhes o nome de células (do latim "cella", lugar fechado, pequeno cômodo). Posteriormente, foi descoberto que, na verdade, Hooke estava observando paredes celulares de células vegetais mortas.</p>
+      <p>Com o avanço da ciência, vários pesquisadores, destacando-se entre eles o botânico Matthias Schleiden e o fisiologista Theodor Schwan, perceberam que diversos organismos eram formados por células. Em 1838, Schleiden descreveu que a célula era a unidade básica dos vegetais. Um ano mais tarde, ele observou que essa premissa também era verdadeira para animais. Surgia aí a Teoria Celular, que afirma que todos os seres vivos são formado por células.</p>
     </div>
+    <script src="Esquema/esquema.js"></script>
   </body>
 </html>
