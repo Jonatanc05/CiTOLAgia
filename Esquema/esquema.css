@@ -11,6 +11,7 @@ body{
 #ir{
 	position: absolute;
 	right: 15px;
+	z-index: 1;
 }
 
 h1{
@@ -18,6 +19,8 @@ h1{
 	margin: 0px;
 	color: #f14e22;
 	text-shadow: 3px 3px 1px black;
+	user-select: none;
+	cursor: default;
 }
 #root{
 	width: 100%;
@@ -31,17 +34,17 @@ h1{
 .setaDiv{
 	width: 10%;
 	text-align: center;
-	cursor: pointer;
-  position: relative;
+  	position: relative;
 }
 .setaImg{
-	width: 60%;
-  margin: 0;
+	width: 70%;
+ 	margin: 0;
 	position: absolute;
-	left: 20%;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+	left: 15%;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	cursor: pointer;
 }
 
 #hist{
