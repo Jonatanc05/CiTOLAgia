@@ -12,6 +12,7 @@ body{
   grid-template-columns: repeat(6,200px);
   grid-template-rows: repeat(4,200px);
   grid-gap: 30px;
+  position: absolute;
 }
 
 .elemento{
@@ -28,9 +29,8 @@ body{
 }
 .elemento:active{
   position: relative;
-  left: 5px;
-  top: 5px;
-  box-shadow: 1px 1px #052b12;
+  left: 1px;
+  top: 1px;
 }
 
 #voltar{

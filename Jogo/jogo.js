@@ -2,6 +2,9 @@ let root = document.getElementById('divGrade');
 
 /*    Criação Cartões    */
 
+let cooldown = 200;//Tempo para clicar novamente, em ms
+let canClick = true;
+
 let arrOrganelas = [
     {
         Nome: "Ectoplasma",
@@ -90,6 +93,7 @@ for(i = 0; i < 24; i++){
 
 /*    Configuração e estilização   */
 
+let espacamentoTop = 60;
 let tamanhoCartao = 180;
 let margemCartao = 30;
 let colunas = 6;
@@ -100,16 +104,13 @@ let resizing = function(event){
     tamanhoCartao = window.innerWidth/10;
     margemCartao = tamanhoCartao/6;
     let gradeWidth = colunas*tamanhoCartao + 2*margemCartao*(colunas-1);
-    //let gradeHeight = linhas*tamanhoCartao + 2*margemCartao*(linhas-1);
     let wWidth = window.innerWidth;
-    //let wHeight = window.innerHeight;
 
     root.style.gridTemplateColumns = "repeat("+colunas+", "+tamanhoCartao+"px)";
     root.style.gridTemplateRows = "repeat("+linhas+", "+tamanhoCartao+"px)";
     root.style.gridGap = margemCartao;
-    root.style.position = "absolute";
     root.style.left = (wWidth - gradeWidth)/2+"px";
-    root.style.top = "60px";
+    root.style.top = espacamentoTop+"px";
     root.style.fontSize = margemCartao*4/6+"px";
     root.style.backgroundSize = wWidth+"px "+window.innerHeight+"px";
 }
@@ -120,5 +121,6 @@ resizing();
 let voltarBtn = document.getElementById('voltar');
 voltarBtn.addEventListener("mouseenter", function(e){e.currentTarget.setAttribute('src', '../imgs/aprender-conteudo-hover.png');});
 voltarBtn.addEventListener("mouseleave", function(e){e.currentTarget.setAttribute('src', '../imgs/aprender-conteudo.png');});
+voltarBtn.addEventListener("click", function(e){window.location.href = "../index.html";});
 
 

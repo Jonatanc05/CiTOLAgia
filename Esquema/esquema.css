@@ -1,0 +1,16 @@
+body{
+	background-color: lightgreen;
+	background-image: url(../imgs/background/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover; 
+	background-position: center 0;
+	background-attachment: fixed;
+  }
+  
+#ir{
+	position: absolute;
+	right: 15px;
+}
+#ir:hover{
+	cursor: pointer;
+}
