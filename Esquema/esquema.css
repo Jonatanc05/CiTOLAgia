@@ -12,9 +12,6 @@ body{
 	position: absolute;
 	right: 15px;
 }
-#ir:hover{
-	cursor: pointer;
-}
 
 h1{
 	position: relative;
