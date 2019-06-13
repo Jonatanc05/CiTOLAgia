@@ -1,9 +1,10 @@
 let root = document.getElementById('divGrade');
 
+var contador = 0; // Variável para ver numero de cartas viradas
 /*    Criação Cartões    */
 
-let cooldown = 200;//Tempo para clicar novamente, em ms
-let canClick = true;
+let cooldown = 200; // Tempo para clicar novamente, em ms
+let canClick = true; // Se a carta pode ser clicada ou não
 
 let arrOrganelas = [
     {
@@ -19,35 +20,35 @@ let arrOrganelas = [
         Descricao: "Síntese de proteínas"
     },
     {
-        Nome: "Centríolo",
+        Nome: "Centriolo",
         Descricao: "Participa ativamente na divisão celular"
     },
     {
-        Nome: "Vacúolos",
+        Nome: "Vacuolo",
         Descricao: "Armazena substâncias"
     },
     {
-        Nome: "Parede celular",
+        Nome: "Parede_celular",
         Descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose"
     },
     {
-        Nome: "Membrana citoplasmatica",
+        Nome: "Membrana_citoplasmatica",
         Descricao: "Delimita a célula e realiza troca com o meio externo e interno"
     },
     {
-        Nome: "Lisossomos",
+        Nome: "Lisossomo",
         Descricao: "Realizam a digestão celular"
     },
     {
-        Nome: "Reticulo endoplasmatico",
+        Nome: "Reticulo_endoplasmatico",
         Descricao: "Processam e transportam moléculas, podem produzir proteínas também"
     },
     {
-        Nome: "Aparelho de golgi",
+        Nome: "Complexo_de_golgi",
         Descricao: "Secreta substâncias para o interior e exterior da célula"
     },
     {
-        Nome: "Mitocôndria",
+        Nome: "Mitocondria",
         Descricao: "Realiza respiração celular"
     },
     {
@@ -55,37 +56,115 @@ let arrOrganelas = [
         Descricao: "Realizam fotossíntese"
     }
 ];
+
+// Criação do vetor de cartas
 let arrCartao = [];
-for(i = 0; i < arrOrganelas.length*2; i+=2){
-    arrCartao[i] = { virada: false, img: "../imgs/"+arrOrganelas[i/2].Nome+".png", descricao: undefined};
-    arrCartao[i+1] = { virada: false, img: undefined, descricao: arrOrganelas[i/2].Descricao };
+arrDiv = [];
+arrDiv[0]=arrDiv[1]=null;
+let arrLogc = [];
+arrLogc[0]=arrLogc[1]=null;
+
+for(i = 0; i < arrOrganelas.length*2; i+=2){ // Atribui a imagem de uma organela às cartas ímpares e a descrição sobre ela às cartas pares
+    arrCartao[i] = { virada: false, img: "../imgs/organelas/"+arrOrganelas[i/2].Nome+".png", descricao: undefined, Nome: arrOrganelas[i/2].Nome, id : 'carta'+i};
+    arrCartao[i+1] = { virada: false, img: undefined, descricao: arrOrganelas[i/2].Descricao, Nome: arrOrganelas[i/2].Nome ,id : 'carta'+(i+1)};
 }
-for(i = 0; i < 24; i++){
+
+for(i = 0; i < 24; i++){ // Randomiza a posição das cartas
     let idx1 = Math.floor(Math.random()*100) % 24;
     let idx2 = Math.floor(Math.random()*100) % 24;
     temp = arrCartao[ idx1 ];
     arrCartao[ idx1 ] = arrCartao[ idx2 ];
     arrCartao[ idx2 ] = temp;
 }
-for(i = 0; i < 24; i++){
+
+for(i = 0; i < 24; i++){ // Cria uma div para cada carta
     let el = document.createElement('div');
     //let id = document.createAttribute('id');
     el.setAttribute('id', 'carta'+i);
     el.setAttribute('class', 'elemento');
-    if(arrCartao[i].img == undefined){
+    el.setAttribute('alt', arrCartao[i].Nome);
+    if(arrCartao[i].img == undefined){ // Caso a carta em questão seja de descrição, cria um 'p' e o coloca dentro da div respectiva da carta
         let p = document.createElement('p');
         p.innerText = arrCartao[i].descricao;
         if( !arrCartao[i].virada)
             p.style.display = "none";
         el.appendChild(p);
     }
-    else{
-        el.style.backgroundImage = arrCartao[i].virada ? "url("+arrCartao[i].img+")" : "url(../imgs/verso.jpg)";
+    else{ // Caso seja uma imagem, atribui ela à carta
+        el.style.backgroundImage = "url(../imgs/verso.jpg)";
     }
     el.addEventListener("click", function(e){
         let id = e.currentTarget.getAttribute('id').substr(5);
-        console.log(id);
-        console.log(arrCartao[id]);
+
+        //console.log(id);
+        //console.log(arrCartao[id]);
+        if(arrCartao[id].virada == false){
+            arrCartao[id].virada = true;
+            if(arrCartao[id].img == undefined){ // Quando é descrição
+                let par = e.currentTarget.children[0];
+                par.style.display = "block";
+                e.currentTarget.style.backgroundImage = "url(../imgs/text-background.jpg)";
+            } 
+            else{
+                e.currentTarget.style.backgroundImage = "url("+arrCartao[id].img+")";
+            }
+
+
+        }
+        
+
+        /*    Lógica do jogo      */
+        if(arrLogc[0] == null){
+            arrLogc[0] = arrCartao[id];
+            arrDiv[0] = e.currentTarget;
+
+        }else if(arrLogc[1] == null){
+            arrLogc[1] = arrCartao[id];
+            arrDiv[1] = e.currentTarget;
+
+            if(arrLogc[0].Nome == arrLogc[1].Nome){
+                console.log("Acertou!!!!");
+                contador++;
+                arrLogc[0] = arrLogc[1] = null;
+                arrLogc[1] = arrLogc[0] = null;
+                if(contador==12){
+                    window.alert("Venceu o game");
+                    contador=0;
+                }
+
+            }else{
+                arrLogc[0].virada = arrLogc[1].virada = false;
+                
+                if(arrLogc[0].img == undefined){
+                    setTimeout( function(){
+                        arrDiv[0].style.backgroundImage = "url(../imgs/verso.jpg)";
+                        let par = arrDiv[0].children[0];
+                        par.style.display = "none";
+                    }, 800);
+                }else{
+                    setTimeout( function(){
+                        arrDiv[0].style.backgroundImage = "url(../imgs/verso.jpg)";
+                    }, 800);
+                }
+
+                if(arrLogc[1].img == undefined){
+                    setTimeout( function(){
+                        arrDiv[1].style.backgroundImage = "url(../imgs/verso.jpg)";
+                        let par = arrDiv[1].children[0];
+                        par.style.display = "none";
+                        arrLogc[0] = arrLogc[1] = null;
+                        arrDiv[1] = arrDiv[0] = null;
+                    }, 800);
+                }else{
+                    setTimeout( function(){
+                        arrDiv[1].style.backgroundImage = "url(../imgs/verso.jpg)";
+                        arrLogc[0] = arrLogc[1] = null;
+                        arrDiv[1] = arrDiv[0] = null;
+                    }, 800);
+                }
+                
+            }
+        }
     });
     root.appendChild(el);
 }
