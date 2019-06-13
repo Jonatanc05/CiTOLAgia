@@ -1,6 +1,6 @@
 let root = document.getElementById('divGrade');
 
-var contador = 0; // Variável para ver numero de cartas viradas
+var verif = 0,contador = 0; // Variável para ver numero de cartas viradas
 /*    Criação Cartões    */
 
 let cooldown = 200; // Tempo para clicar novamente, em ms
@@ -65,7 +65,7 @@ let arrLogc = [];
 arrLogc[0]=arrLogc[1]=null;
 
 for(i = 0; i < arrOrganelas.length*2; i+=2){ // Atribui a imagem de uma organela às cartas ímpares e a descrição sobre ela às cartas pares
-    arrCartao[i] = { virada: false, img: "../imgs/organelas/"+arrOrganelas[i/2].Nome+".png", descricao: undefined, Nome: arrOrganelas[i/2].Nome, id : 'carta'+i};
+    arrCartao[i] = { virada: false, img: "../imgs/organelas/"+arrOrganelas[i/2].Nome+".png", descricao: undefined, Nome: arrOrganelas[i/2].Nome, id : 'carta'+i };
     arrCartao[i+1] = { virada: false, img: undefined, descricao: arrOrganelas[i/2].Descricao, Nome: arrOrganelas[i/2].Nome ,id : 'carta'+(i+1)};
 }
 
@@ -100,6 +100,7 @@ for(i = 0; i < 24; i++){ // Cria uma div para cada carta
         //console.log(arrCartao[id]);
         if(arrCartao[id].virada == false){
             arrCartao[id].virada = true;
+            verif = 0;
             if(arrCartao[id].img == undefined){ // Quando é descrição
                 let par = e.currentTarget.children[0];
                 par.style.display = "block";
@@ -108,30 +109,27 @@ for(i = 0; i < 24; i++){ // Cria uma div para cada carta
             else{
                 e.currentTarget.style.backgroundImage = "url("+arrCartao[id].img+")";
             }
-
-
         }
-        
+        else verif = 1;
 
         /*    Lógica do jogo      */
-        if(arrLogc[0] == null){
+        if(arrLogc[0] == null && verif == 0){
             arrLogc[0] = arrCartao[id];
             arrDiv[0] = e.currentTarget;
 
-        }else if(arrLogc[1] == null){
+        }else if(arrLogc[1] == null && verif == 0){
             arrLogc[1] = arrCartao[id];
             arrDiv[1] = e.currentTarget;
 
             if(arrLogc[0].Nome == arrLogc[1].Nome){
                 console.log("Acertou!!!!");
                 contador++;
-                arrLogc[0] = arrLogc[1] = null;
-                arrLogc[1] = arrLogc[0] = null;
+                arrDiv[0] = arrLogc[1] = null;
+                arrDiv[1] = arrLogc[0] = null;
                 if(contador==12){
                     window.alert("Venceu o game");
                     contador=0;
                 }
-
             }else{
                 arrLogc[0].virada = arrLogc[1].virada = false;
                 
@@ -202,4 +200,30 @@ voltarBtn.addEventListener("mouseenter", function(e){e.currentTarget.setAttribut
 voltarBtn.addEventListener("mouseleave", function(e){e.currentTarget.setAttribute('src', '../imgs/aprender-conteudo.png');});
 voltarBtn.addEventListener("click", function(e){window.location.href = "../index.html";});
 
+let recBtn = document.getElementById('recarrega');
+/*recBtn.addEventListener("click", function(){
+    var el = document.getElementById('carta'+i);
 
+    for(i = 0; i < 24; i++){
+        if(arrCartao[el.getAttribute('id').substr(5)].img == undefined1){
+            el.style.backgroundImage = "url(../imgs/verso.jpg)";
+            el.children[0].style.display = "none";
+        }
+        else
+            el.style.backgroundImage = "url(../imgs/verso.jpg)";
+        
+    }
+
+    for(i = 0; i < arrOrganelas.length*2; i+=2){ // Atribui a imagem de uma organela às cartas ímpares e a descrição sobre ela às cartas pares
+        arrCartao[i] = { virada: false, img: "../imgs/organelas/"+arrOrganelas[i/2].Nome+".png", descricao: undefined, Nome: arrOrganelas[i/2].Nome, id : 'carta'+i };
+        arrCartao[i+1] = { virada: false, img: undefined, descricao: arrOrganelas[i/2].Descricao, Nome: arrOrganelas[i/2].Nome ,id : 'carta'+(i+1)};
+    }
+    
+    for(i = 0; i < 24; i++){ // Randomiza a posição das cartas
+        let idx1 = Math.floor(Math.random()*100) % 24;
+        let idx2 = Math.floor(Math.random()*100) % 24;
+        temp = arrCartao[ idx1 ];
+        arrCartao[ idx1 ] = arrCartao[ idx2 ];
+        arrCartao[ idx2 ] = temp;
+    }
+});*/
