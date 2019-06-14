@@ -1,9 +1,6 @@
 //Inicialização da página
 
 let root = document.getElementById('root');
-let celulaAn = document.getElementById('animal');
-let celulaVeg = document.getElementById('vegetal');
-let celulaPro = document.getElementById('procarionte');
 let celulas = document.getElementsByClassName("esquema");
 let cellIdx = 0;// 0-animal / 1-vegetal / 2-procarionte
 
@@ -22,11 +19,28 @@ updateCellDisplay();
 
 function resizing(){
     let wHeight = window.innerHeight;
+    let wWidth = window.innerWidth;
 
     let celulaAtual = celulas[cellIdx];
     let h1 = celulaAtual.children[0];
     h1.style.fontSize = wHeight/10+"px";
     celulaAtual.style.height = wHeight*9/10+"px";
+    
+    let celulaImgs = document.getElementsByClassName('celula');
+    for(let img of celulaImgs){
+        let parent = img.parentElement;
+        let roomHeight = parent.offsetHeight - h1.offsetHeight;
+        let roomWidth = parent.offsetWidth
+        if( roomHeight < roomWidth ){
+            img.style.removeProperty('width');
+            img.style.height = roomHeight+"px";
+        }
+        else{
+            img.style.removeProperty('height');
+            img.style.width = roomWidth+"px";
+        }
+        img.style.left = (roomWidth - img.offsetWidth)/2+"px";
+    }
 
 }
 resizing();
@@ -96,25 +110,9 @@ function slideInFrom(element, originPos){
 //Organelas clicáveis
 let arrOrganelas = [
     {
-        Nome: "Ectoplasma",
-        Descricao: "Parte mais externa do citoplasma, é encontrado na forma de gel (gelatinoso)",
-        img: "imgs/organelas/ectoplasma.png",
-        x: 100,
-        y: 100,
-        celula: "eucarionte"
-    },
-    {
-        Nome: "Endoplasma",
-        Descricao: "Parte mais interna do citoplasma,é encontrado geralmente na forma de sol (liquido)",
-        img: "imgs/organelas/endoplasma.png",
-        x: 100,
-        y: 100,
-        celula: "eucarionte"
-    },
-    {
         Nome: "Ribossomo",
         Descricao: "Síntese de proteínas",
-        img: "imgs/organelas/Ribossomo.png",
+        img: "imgs/organelas/ribossomo.png",
         x: 100,
         y: 100,
         celula: "todas"
@@ -122,7 +120,7 @@ let arrOrganelas = [
     {
         Nome: "Centríolo",
         Descricao: "Participa ativamente na divisão celular",
-        img: "imgs/organelas/Centriolo.png",
+        img: "imgs/organelas/centriolo.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
@@ -130,7 +128,7 @@ let arrOrganelas = [
     {
         Nome: "Vacúolos",
         Descricao: "Armazena substâncias",
-        img: "imgs/organelas/Vacuolo.png",
+        img: "imgs/organelas/vacuolo.png",
         x: 100,
         y: 100,
         celula: "vegetal"
@@ -138,7 +136,7 @@ let arrOrganelas = [
     {
         Nome: "Parede celular",
         Descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
-        img: "imgs/organelas/Parede_celular.png",
+        img: "imgs/organelas/vegetal.png",
         x: 100,
         y: 100,
         celula: "vegetal"
@@ -146,7 +144,7 @@ let arrOrganelas = [
     {
         Nome: "Membrana citoplasmática",
         Descricao: "Delimita a célula e realiza troca com o meio externo e interno",
-        img: "imgs/organelas/Membrana_citoplasmatica.png",
+        img: "imgs/organelas/animal.png",
         x: 100,
         y: 100,
         celula: "todas"
@@ -154,15 +152,15 @@ let arrOrganelas = [
     {
         Nome: "Lisossomos",
         Descricao: "Realizam a digestão celular",
-        img: "imgs/organelas/Lisossomo.png",
+        img: "imgs/organelas/lisossomo.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
     },
     {
-        Nome: "Reticulo endoplasmatico",
+        Nome: "Reticulo endoplasmatico rugoso",
         Descricao: "Processam e transportam moléculas, podem produzir proteínas também",
-        img: "imgs/organelas/Reticulo_endoplasmatico.png",
+        img: "imgs/organelas/retRugoso.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
@@ -170,7 +168,7 @@ let arrOrganelas = [
     {
         Nome: "Complexo de golgi",
         Descricao: "Secreta substâncias para o interior e exterior da célula",
-        img: "imgs/organelas/Complexo_de_golgi.png",
+        img: "imgs/organelas/complexo_de_golgi.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
@@ -178,7 +176,7 @@ let arrOrganelas = [
     {
         Nome: "Mitocôndria",
         Descricao: "Realiza respiração celular",
-        img: "imgs/organelas/Mitocondria.png",
+        img: "imgs/organelas/mitocondria.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
@@ -186,7 +184,7 @@ let arrOrganelas = [
     {
         Nome: "Cloroplasto",
         Descricao: "Realizam fotossíntese",
-        img: "imgs/organelas/Cloroplasto.png",
+        img: "imgs/organelas/cloroplasto.png",
         x: 100,
         y: 100,
         celula: "vegetal"
