@@ -30,6 +30,10 @@ h1{
 .esquema{
 	width: 80%;
 	text-align: center;
+	position: relative;
+}
+.esquema > img{
+	position: absolute;
 }
 .setaDiv{
 	width: 10%;

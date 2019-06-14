@@ -1,24 +1,37 @@
+//Inicialização da página
+
 let root = document.getElementById('root');
 let celulaAn = document.getElementById('animal');
 let celulaVeg = document.getElementById('vegetal');
 let celulaPro = document.getElementById('procarionte');
+let celulas = document.getElementsByClassName("esquema");
+let cellIdx = 1;// 0-animal / 1-vegetal / 2-procarionte
 
-celulaVeg.style.display = "none";
-celulaPro.style.display = "none";
 
+function updateCellDisplay(){
+    for(i = 0; i < 3; i++){
+        if(i != cellIdx)
+            celulas[i].style.display = "none";
+        else
+            celulas[i].style.display = "block";
+    }
+}
+updateCellDisplay();
 
 function resizing(){
     let wWidth = window.innerWidth;
     let wHeight = window.innerHeight;
 
-    let h1 = celulaAn.children[0];
+    let celulaAtual = celulas[cellIdx];
+    let h1 = celulaAtual.children[0];
     h1.style.fontSize = wHeight/10+"px";
-    celulaAn.style.height = wHeight*9/10+"px";
+    celulaAtual.style.height = wHeight*9/10+"px";
 
 }
 resizing();
 window.onresize = resizing;
 
+//Array de organelas
 let arrOrganelas = [
     {
         Nome: "Ectoplasma",
@@ -70,5 +83,34 @@ let arrOrganelas = [
     }
 ];
 
+//Botão "Exercitar conteúdo"
 document.getElementById('ir').addEventListener("mouseenter", function(e){e.currentTarget.children[0].style.width = 280+"px";});
 document.getElementById('ir').addEventListener("mouseleave", function(e){e.currentTarget.children[0].style.width = 240+"px";});
+
+//Funcionamento das setas
+let setas = document.getElementsByClassName("setaImg");
+function alterarCelula(e){
+    if( e.currentTarget.getAttribute("id") == "direitaImg" )
+        cellIdx = (cellIdx == 2) ? 0 : cellIdx+1;
+    else
+        cellIdx = (cellIdx == 0) ? 2 : cellIdx-1;
+    updateCellDisplay();
+    resizing();
+
+    setTimeout(function(){
+
+        enableArrows();
+    }, 1000);
+    disableArrows();
+}
+function disableArrows(){
+    for(let seta of setas){
+        seta.removeEventListener("click", alterarCelula);
+    }
+}
+function enableArrows(){
+    for(let seta of setas){
+        seta.addEventListener("click", alterarCelula);
+    }
+}
+enableArrows();
