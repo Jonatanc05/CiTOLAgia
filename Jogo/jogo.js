@@ -201,29 +201,6 @@ voltarBtn.addEventListener("mouseleave", function(e){e.currentTarget.setAttribut
 voltarBtn.addEventListener("click", function(e){window.location.href = "../index.html";});
 
 let recBtn = document.getElementById('recarrega');
-/*recBtn.addEventListener("click", function(){
-    var el = document.getElementById('carta'+i);
-
-    for(i = 0; i < 24; i++){
-        if(arrCartao[el.getAttribute('id').substr(5)].img == undefined1){
-            el.style.backgroundImage = "url(../imgs/verso.jpg)";
-            el.children[0].style.display = "none";
-        }
-        else
-            el.style.backgroundImage = "url(../imgs/verso.jpg)";
-        
-    }
-
-    for(i = 0; i < arrOrganelas.length*2; i+=2){ // Atribui a imagem de uma organela às cartas ímpares e a descrição sobre ela às cartas pares
-        arrCartao[i] = { virada: false, img: "../imgs/organelas/"+arrOrganelas[i/2].Nome+".png", descricao: undefined, Nome: arrOrganelas[i/2].Nome, id : 'carta'+i };
-        arrCartao[i+1] = { virada: false, img: undefined, descricao: arrOrganelas[i/2].Descricao, Nome: arrOrganelas[i/2].Nome ,id : 'carta'+(i+1)};
-    }
-    
-    for(i = 0; i < 24; i++){ // Randomiza a posição das cartas
-        let idx1 = Math.floor(Math.random()*100) % 24;
-        let idx2 = Math.floor(Math.random()*100) % 24;
-        temp = arrCartao[ idx1 ];
-        arrCartao[ idx1 ] = arrCartao[ idx2 ];
-        arrCartao[ idx2 ] = temp;
-    }
-});*/
+recBtn.addEventListener("click", function(){
+    //new game;
+});
