@@ -98,9 +98,6 @@ function newgame(){
         }
         el.addEventListener("click", function(e){
             let id = e.currentTarget.getAttribute('id').substr(5);
-
-            //console.log(id);
-            //console.log(arrCartao[id]);
             if(arrCartao[id].virada == false){
                 arrCartao[id].virada = true;
                 verif = 0;
