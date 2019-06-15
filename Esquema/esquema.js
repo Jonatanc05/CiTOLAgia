@@ -114,9 +114,9 @@ let arrOrganelas = [
         nome: "Núcleo",
         descricao: "Contém o material genético matriz da célula",
         img: "imgs/organelas/nucleo.png",
-        x: "44%",
-        y: "45%",
-        w: "8%",
+        x: "45%",
+        y: "35%",
+        w: "15%",
         celula: "eucarionte"
     },
     {
@@ -124,66 +124,61 @@ let arrOrganelas = [
         descricao: "Síntese de proteínas",
         img: "imgs/organelas/ribossomo.png",
         x: "32%",
-        y: "50%",
-        w: "2%",
+        y: "55%",
+        w: "5%",
         celula: "todas"
     },
     {
         nome: "Centríolo",
         descricao: "Participa ativamente na divisão celular",
         img: "imgs/organelas/centriolo.png",
-        x: "45%",
-        y: "37%",
-        w: "6%",
-        celula: "eucarionte"
+        x: "35%",
+        y: "70%",
+        w: "9%",
+        celula: "animal"
     },
     {
         nome: "Vacúolos",
         descricao: "Armazena substâncias",
         img: "imgs/organelas/vacuolo.png",
-        x: "31%",
-        y: "33%",
+        x: "35%",
+        y: "30%",
         w: "14%",
         celula: "vegetal"
     },
     {
-        nome: "Parede celular",
-        descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
-        img: "imgs/organelas/vegetal.png",
-        x: 100,
-        y: 100,
-        celula: "vegetal"
-    },/*
-    {
-        nome: "Membrana citoplasmática",
-        descricao: "Delimita a célula e realiza troca com o meio externo e interno",
-        img: "imgs/organelas/animal.png",
-        x: 100,
-        y: 100,
-        celula: "todas"
-    },*/
-    {
         nome: "Lisossomos",
         descricao: "Realizam a digestão celular",
         img: "imgs/organelas/lisossomo.png",
-        x: 100,
-        y: 100,
+        x: "35%",
+        y: "45%",
+        w: "6%",
         celula: "eucarionte"
     },
     {
         nome: "Reticulo endoplasmatico rugoso",
-        descricao: "Processam e transportam moléculas, podem produzir proteínas também",
-        img: "imgs/organelas/retRugoso.png",
-        x: 100,
-        y: 100,
+        descricao: "Processam e transportam moléculas, torna a síntese de proteínas mais eficiente",
+        img: "imgs/organelas/Reticulo_endoplasmatico_rugoso.png",
+        x: "48%",
+        y: "55%",
+        w: "15%",
+        celula: "eucarionte"
+    },
+    {
+        nome: "Reticulo endoplasmatico liso",
+        descricao: "Processam e transportam moléculas, participa da produção de lipídios",
+        img: "imgs/organelas/Reticulo_endoplasmatico_liso.png",
+        x: "50%",
+        y: "20%",
+        w: "8%",
         celula: "eucarionte"
     },
     {
         nome: "Complexo de golgi",
         descricao: "Secreta substâncias para o interior e exterior da célula",
         img: "imgs/organelas/complexo_de_golgi.png",
-        x: "54%",
-        y: "60%",
+        x: "61%",
+        y: "35%",
         w: "9%",
         celula: "eucarionte"
     },
@@ -191,16 +186,18 @@ let arrOrganelas = [
         nome: "Mitocôndria",
         descricao: "Realiza respiração celular",
         img: "imgs/organelas/mitocondria.png",
-        x: 100,
-        y: 100,
+        x: "38%",
+        y: "60%",
+        w: "8%",
         celula: "eucarionte"
     },
     {
         nome: "Cloroplasto",
         descricao: "Realizam fotossíntese",
         img: "imgs/organelas/cloroplasto.png",
-        x: 100,
-        y: 100,
+        x: "60%",
+        y: "48%",
+        w: "6%",
         celula: "vegetal"
     }
 ];
@@ -231,9 +228,21 @@ for(let celula of arrCelulas){
 
                 newImg.addEventListener("click", function(){
                     let info = document.getElementById('fixedInfo');
+                    info.children[0].innerHTML = organela.nome;
+                    info.children[1].innerHTML = organela.descricao;
+                    let imagem = document.getElementById('container');
+                    imagem.children[0].setAttribute('src', organela.img);
+                    let janela = document.getElementById('sobreposicao');
+                    janela.style.display = "block";
                 });
 
                 document.getElementById(celula.nome).appendChild(newImg);
+
+                let fechar = document.getElementById('fechar');
+                fechar.addEventListener('click',function(){
+                    let janela = document.getElementById('sobreposicao');
+                    janela.style.display = "none";
+                })
             }
         }
     }
