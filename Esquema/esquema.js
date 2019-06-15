@@ -60,24 +60,24 @@ function alterarCelula(e){
         setTimeout(function(){
             updateCellDisplay();
             resizing();
-            slideInFrom(celulas[cellIdx], "50%");
-        }, 600);
+            slideInFrom(celulas[cellIdx], "40%")
+        }, 800);
     }
     else{
-        slideOutTo(celulas[cellIdx], "50%");
+        slideOutTo(celulas[cellIdx], "40%");
         cellIdx = (cellIdx == 0) ? 2 : cellIdx-1;
         setTimeout(function(){
             updateCellDisplay();
             resizing();
             slideInFrom(celulas[cellIdx], "-40%");
-        }, 600);
+        }, 800);
     }        
 
     disableArrows();
     setTimeout(function(){
         enableArrows();
-    }, 1600);
-}
+    }, 1900);
+};
 
 function disableArrows(){
     for(let seta of setas){
@@ -93,18 +93,20 @@ function enableArrows(){
 enableArrows();
 
 function slideOutTo(element, targetPos){
+    element.style.transition = "all 800ms cubic-bezier(.82,-0.86,.43,1.04)";
     element.style.left = targetPos;
     element.style.opacity = "0";
 }
 function slideInFrom(element, originPos){
     element.style.removeProperty('transition');
     element.style.left = originPos;
+    element.style.opacity = "0";
     
     setTimeout(function(){
         element.style.transition = "all 800ms cubic-bezier(.82,-0.86,.43,1.04)";
         element.style.left = "0";
         element.style.opacity = "1";
-    }, 100);
+    }, 500);
 }
 
 //Organelas clicáveis

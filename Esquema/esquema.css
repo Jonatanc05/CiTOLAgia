@@ -50,7 +50,7 @@ h1{
 	left: 0px;
 	opacity: 1;
 	position: relative;
-	transition: all 800ms cubic-bezier(.82,-0.86,.43,1.04);
+	/*transition: all 800ms cubic-bezier(.82,-0.86,.43,1.04);*/
 }
 .esquema > img{
 	position: absolute;
