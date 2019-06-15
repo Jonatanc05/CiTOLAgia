@@ -19,7 +19,6 @@ updateCellDisplay();
 
 function resizing(){
     let wHeight = window.innerHeight;
-    let wWidth = window.innerWidth;
 
     let celulaAtual = celulas[cellIdx];
     let h1 = celulaAtual.children[0];
@@ -30,7 +29,7 @@ function resizing(){
     for(let img of celulaImgs){
         let parent = img.parentElement;
         let roomHeight = parent.offsetHeight - h1.offsetHeight;
-        let roomWidth = parent.offsetWidth
+        let roomWidth = parent.offsetWidth;
         if( roomHeight < roomWidth ){
             img.style.removeProperty('width');
             img.style.height = roomHeight+"px";
@@ -112,83 +111,130 @@ function slideInFrom(element, originPos){
 //Organelas clicáveis
 let arrOrganelas = [
     {
-        Nome: "Ribossomo",
-        Descricao: "Síntese de proteínas",
-        img: "imgs/organelas/ribossomo.png",
-        x: 100,
-        y: 100,
-        celula: "todas"
-    },
-    {
-        Nome: "Centríolo",
-        Descricao: "Participa ativamente na divisão celular",
-        img: "imgs/organelas/centriolo.png",
-        x: 100,
-        y: 100,
+        nome: "Núcleo",
+        descricao: "Contém o material genético matriz da célula",
+        img: "imgs/organelas/nucleo.png",
+        x: "44%",
+        y: "45%",
+        w: "8%",
         celula: "eucarionte"
     },
     {
-        Nome: "Vacúolos",
-        Descricao: "Armazena substâncias",
+        nome: "Ribossomo",
+        descricao: "Síntese de proteínas",
+        img: "imgs/organelas/ribossomo.png",
+        x: "32%",
+        y: "50%",
+        w: "2%",
+        celula: "todas"
+    },
+    {
+        nome: "Centríolo",
+        descricao: "Participa ativamente na divisão celular",
+        img: "imgs/organelas/centriolo.png",
+        x: "45%",
+        y: "37%",
+        w: "6%",
+        celula: "eucarionte"
+    },
+    {
+        nome: "Vacúolos",
+        descricao: "Armazena substâncias",
         img: "imgs/organelas/vacuolo.png",
-        x: 100,
-        y: 100,
+        x: "31%",
+        y: "33%",
+        w: "14%",
         celula: "vegetal"
     },
     {
-        Nome: "Parede celular",
-        Descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
+        nome: "Parede celular",
+        descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
         img: "imgs/organelas/vegetal.png",
         x: 100,
         y: 100,
         celula: "vegetal"
-    },
+    },/*
     {
-        Nome: "Membrana citoplasmática",
-        Descricao: "Delimita a célula e realiza troca com o meio externo e interno",
+        nome: "Membrana citoplasmática",
+        descricao: "Delimita a célula e realiza troca com o meio externo e interno",
         img: "imgs/organelas/animal.png",
         x: 100,
         y: 100,
         celula: "todas"
-    },
+    },*/
     {
-        Nome: "Lisossomos",
-        Descricao: "Realizam a digestão celular",
+        nome: "Lisossomos",
+        descricao: "Realizam a digestão celular",
         img: "imgs/organelas/lisossomo.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
     },
     {
-        Nome: "Reticulo endoplasmatico rugoso",
-        Descricao: "Processam e transportam moléculas, podem produzir proteínas também",
+        nome: "Reticulo endoplasmatico rugoso",
+        descricao: "Processam e transportam moléculas, podem produzir proteínas também",
         img: "imgs/organelas/retRugoso.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
     },
     {
-        Nome: "Complexo de golgi",
-        Descricao: "Secreta substâncias para o interior e exterior da célula",
+        nome: "Complexo de golgi",
+        descricao: "Secreta substâncias para o interior e exterior da célula",
         img: "imgs/organelas/complexo_de_golgi.png",
-        x: 100,
-        y: 100,
+        x: "54%",
+        y: "60%",
+        w: "9%",
         celula: "eucarionte"
     },
     {
-        Nome: "Mitocôndria",
-        Descricao: "Realiza respiração celular",
+        nome: "Mitocôndria",
+        descricao: "Realiza respiração celular",
         img: "imgs/organelas/mitocondria.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
     },
     {
-        Nome: "Cloroplasto",
-        Descricao: "Realizam fotossíntese",
+        nome: "Cloroplasto",
+        descricao: "Realizam fotossíntese",
         img: "imgs/organelas/cloroplasto.png",
         x: 100,
         y: 100,
         celula: "vegetal"
     }
 ];
+let arrCelulas = [
+    {
+        nome: "animal",
+        tiposAceitos: ["animal", "eucarionte", "todas"]
+    },
+    {
+        nome: "vegetal",
+        tiposAceitos: ["vegetal", "eucarionte", "todas"]
+    },
+    {
+        nome: "procarionte",
+        tiposAceitos: ["procarionte", "todas"]
+    }
+]
+
+for(let celula of arrCelulas){
+    for(let organela of arrOrganelas){
+        for(let tipo of celula.tiposAceitos){
+            if(organela.celula == tipo){
+                let newImg = document.createElement('img');
+                newImg.setAttribute('src', organela.img);
+                newImg.style.left = organela.x;
+                newImg.style.top = organela.y;
+                newImg.style.width = organela.w;
+
+                newImg.addEventListener("click", function(){
+                    let info = document.getElementById('fixedInfo');
+                });
+
+                document.getElementById(celula.nome).appendChild(newImg);
+            }
+        }
+    }
+}
