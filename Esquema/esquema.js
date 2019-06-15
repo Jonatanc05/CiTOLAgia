@@ -113,7 +113,7 @@ let arrOrganelas = [
     {
         nome: "Núcleo",
         descricao: "Contém o material genético matriz da célula",
-        img: "imgs/organelas/nucleo.png",
+        img: "imgs/organelas/Nucleo.png",
         x: "45%",
         y: "35%",
         w: "15%",
@@ -122,7 +122,7 @@ let arrOrganelas = [
     {
         nome: "Ribossomo",
         descricao: "Síntese de proteínas",
-        img: "imgs/organelas/ribossomo.png",
+        img: "imgs/organelas/Ribossomo.png",
         x: "32%",
         y: "55%",
         w: "5%",
@@ -131,7 +131,7 @@ let arrOrganelas = [
     {
         nome: "Centríolo",
         descricao: "Participa ativamente na divisão celular",
-        img: "imgs/organelas/centriolo.png",
+        img: "imgs/organelas/Centriolo.png",
         x: "35%",
         y: "70%",
         w: "9%",
@@ -140,7 +140,7 @@ let arrOrganelas = [
     {
         nome: "Vacúolos",
         descricao: "Armazena substâncias",
-        img: "imgs/organelas/vacuolo.png",
+        img: "imgs/organelas/Vacuolo.png",
         x: "35%",
         y: "30%",
         w: "14%",
@@ -149,7 +149,7 @@ let arrOrganelas = [
     {
         nome: "Lisossomos",
         descricao: "Realizam a digestão celular",
-        img: "imgs/organelas/lisossomo.png",
+        img: "imgs/organelas/Lisossomo.png",
         x: "35%",
         y: "45%",
         w: "6%",
@@ -176,7 +176,7 @@ let arrOrganelas = [
     {
         nome: "Complexo de golgi",
         descricao: "Secreta substâncias para o interior e exterior da célula",
-        img: "imgs/organelas/complexo_de_golgi.png",
+        img: "imgs/organelas/Complexo_de_golgi.png",
         x: "61%",
         y: "35%",
         w: "9%",
@@ -185,7 +185,7 @@ let arrOrganelas = [
     {
         nome: "Mitocôndria",
         descricao: "Realiza respiração celular",
-        img: "imgs/organelas/mitocondria.png",
+        img: "imgs/organelas/Mitocondria.png",
         x: "38%",
         y: "60%",
         w: "8%",
@@ -194,7 +194,7 @@ let arrOrganelas = [
     {
         nome: "Cloroplasto",
         descricao: "Realizam fotossíntese",
-        img: "imgs/organelas/cloroplasto.png",
+        img: "imgs/organelas/Cloroplasto.png",
         x: "60%",
         y: "48%",
         w: "6%",
