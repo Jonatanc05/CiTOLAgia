@@ -1,0 +1,51 @@
+body{
+  background-color: lightgreen;
+  background-image: url(../imgs/background/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center 0;
+  background-attachment: fixed;
+}
+
+#divGrade{
+  display: grid;
+  grid-template-columns: repeat(6,200px);
+  grid-template-rows: repeat(4,200px);
+  grid-gap: 30px;
+  position: absolute;
+}
+
+.elemento{
+  background-image: url(../imgs/verso.jpg);
+  background-size: contain;
+  padding: 5px;
+  box-shadow: 10px 10px #052b12;
+  transition: 400ms ease all;
+}
+.elemento:hover{
+  box-shadow: 7px 7px #052b12;
+  border: 3px solid #20b050;
+  cursor: pointer;
+}
+.elemento:active{
+  position: relative;
+  left: 1px;
+  top: 1px;
+}
+
+#recarrega{
+  position: absolute;
+  right : 15px;
+  width:80px;
+}
+#recarrega:hover{
+  width:100px;
+  cursor: pointer;
+}
+#voltar{
+  position: absolute;
+  left: 15px;
+}
+#voltar:hover{
+  cursor: pointer;
+}
