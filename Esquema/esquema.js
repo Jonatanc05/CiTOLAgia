@@ -249,6 +249,7 @@ for(let celula of arrCelulas){
             if(organela.celula == tipo){
                 let newImg = document.createElement('img');
                 newImg.setAttribute('src', organela.img);
+                newImg.setAttribute('class', 'organelas');
                 newImg.style.left = organela.x;
                 newImg.style.top = organela.y;
                 newImg.style.width = organela.w;
