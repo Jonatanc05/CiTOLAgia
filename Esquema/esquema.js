@@ -161,15 +161,15 @@ let arrOrganelas = [
     },
     {
         Nome: "Reticulo endoplasmático",
-        Descricao: "Processam e transportam moléculas, podem produzir proteínas também",
+        Descricao: "Está envolvido na síntese de proteínas e lípidios, bem como na desintoxicação celular e no transporte intracelular. Está presente em grandes quantidades no fígado. Pode ser liso (sem ribossomos) ou rugoso (com ribossomos).",
         img: "imgs/organelas/Reticulo_endoplasmatico.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
     },
     {
-        Nome: "Complexo de golgi",
-        Descricao: "Secreta substâncias para o interior e exterior da célula",
+        Nome: "Complexo de Golgi",
+        Descricao: "Sua função primordial é a secreção de proteínas ribossomáticas e a sua distribuição por entre essas vesículas. Funciona como centro de armazenamento, transformação, empacotamento e remessa de substâncias.",
         img: "imgs/organelas/Complexo_de_golgi.png",
         x: 100,
         y: 100,
@@ -177,7 +177,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Mitocôndria",
-        Descricao: "Realiza respiração celular",
+        Descricao: "Realiza a respiração celular, processando a glicose e convertendo-a em energia sob a forma de ATP. Está presente em grandes quantidades no coração, sistema nervoso e sistema muscular. A teoria da endossimbiose diz que a mitocôndria, assim como o cloroplasto, era um ser de vida livre e se tornou uma organela por motivo de uma associação simbiótica entre ele e a célula.",
         img: "imgs/organelas/Mitocondria.png",
         x: 100,
         y: 100,
@@ -185,7 +185,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Cloroplasto",
-        Descricao: "Realizam fotossíntese",
+        Descricao: "Organela responsável por dar a cor verde às plantas, visto que é nela que está a clorofila. No cloroplasto é que se realiza a fotossíntese. A teoria da endossimbiose diz que o cloroplasto, assim como a mitocôndria, era um ser de vida livre e se tornou uma organela por motivo de uma associação simbiótica entre ele e a célula.",
         img: "imgs/organelas/Cloroplasto.png",
         x: 100,
         y: 100,
