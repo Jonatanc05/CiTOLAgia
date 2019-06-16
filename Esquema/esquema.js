@@ -97,7 +97,7 @@ function slideInFrom(element, originPos){
 let arrOrganelas = [
     {
         Nome: "Ectoplasma",
-        Descricao: "Parte mais externa do citoplasma, é encontrado na forma de gel (gelatinoso)",
+        Descricao: "Parte mais externa do citoplasma, formada pelo líquido citoplasmático, de consistência gelatinosa. Espesso e transparente.",
         img: "imgs/organelas/ectoplasma.png",
         x: 100,
         y: 100,
@@ -105,7 +105,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Endoplasma",
-        Descricao: "Parte mais interna do citoplasma,é encontrado geralmente na forma de sol (liquido)",
+        Descricao: "Parte mais interna do citoplasma, que circula o núcleo da célula. Tem consistência líquida e é também chamado de citosol.",
         img: "imgs/organelas/endoplasma.png",
         x: 100,
         y: 100,
@@ -113,7 +113,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Ribossomo",
-        Descricao: "Síntese de proteínas",
+        Descricao: "Os ribossomos ou ribossomas são as organelas responsáveis pela síntese de proteínas, tanto nas células eucariontes quanto nas procariontes. Podem ser encontrados tanto livres no citoplasma quanto aderidos ao retículo endoplasmático.",
         img: "imgs/organelas/Ribossomo.png",
         x: 100,
         y: 100,
@@ -121,7 +121,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Centríolo",
-        Descricao: "Participa ativamente na divisão celular",
+        Descricao: "Geralmente encontrados aos pares, os centríolos são compostos por 9 grupos de 3 microtúbulos cada, formando uma espécie de cilindro. Participam ativamente da divisão celular.",
         img: "imgs/organelas/Centriolo.png",
         x: 100,
         y: 100,
@@ -129,7 +129,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Vacúolos",
-        Descricao: "Armazena substâncias",
+        Descricao: "Muito abundantes nas células vegetais, os vacúolos podem ser de 3 tipos diferentes: de armazenamento, digestórios ou pulsáteis (eliminar o excesso de água da célula por osmose).",
         img: "imgs/organelas/Vacuolo.png",
         x: 100,
         y: 100,
@@ -137,7 +137,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Parede celular",
-        Descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
+        Descricao: "Presente exclusivamente nas células vegetais, a parede celular é responsável por manter a forma e a rigidez. Pode ser de celulose ou quitina.",
         img: "imgs/organelas/Parede_celular.png",
         x: 100,
         y: 100,
@@ -145,7 +145,7 @@ let arrOrganelas = [
     },
     {
         Nome: "Membrana citoplasmática",
-        Descricao: "Delimita a célula e realiza troca com o meio externo e interno",
+        Descricao: "Estrutura que delimita a célula, estabelecendo uma barreira entre o citoplasma e o ambiente extracelular. Possui permeabilidade seletiva.",
         img: "imgs/organelas/Membrana_citoplasmatica.png",
         x: 100,
         y: 100,
@@ -153,14 +153,14 @@ let arrOrganelas = [
     },
     {
         Nome: "Lisossomos",
-        Descricao: "Realizam a digestão celular",
+        Descricao: "Presentes apenas nas células animais, os lisossomos realizam a digestão celular, além de desempenharem uma função de reciclagem de antigos componentes da célula, por meio da autofagia.",
         img: "imgs/organelas/Lisossomo.png",
         x: 100,
         y: 100,
         celula: "eucarionte"
     },
     {
-        Nome: "Reticulo endoplasmatico",
+        Nome: "Reticulo endoplasmático",
         Descricao: "Processam e transportam moléculas, podem produzir proteínas também",
         img: "imgs/organelas/Reticulo_endoplasmatico.png",
         x: 100,
