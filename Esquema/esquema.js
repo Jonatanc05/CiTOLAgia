@@ -112,7 +112,7 @@ function slideInFrom(element, originPos){
 let arrOrganelas = [
     {
         nome: "Membrana Citoplasmatica",
-        descricao: "Delimita a célula e realiza troca com o meio externo e interno",
+        descricao: "Estrutura que delimita a célula, estabelecendo uma barreira entre o citoplasma e o ambiente extracelular. Possui permeabilidade seletiva.",
         img: "imgs/organelas/Membrana_citoplasmatica.png",
         x: "25%",
         y: "15%",
@@ -121,7 +121,7 @@ let arrOrganelas = [
     },
     {
         nome: "Parede Celular",
-        descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
+        descricao: "Presente exclusivamente nas células vegetais, a parede celular é responsável por manter a forma e a rigidez. Pode ser de celulose ou quitina.",
         img: "imgs/organelas/Parede_celular.png",
         x: "25%",
         y: "15%",
@@ -130,7 +130,7 @@ let arrOrganelas = [
     },
     {
         nome: "Celula Procarionte",
-        descricao: "PESQUISAR",
+        descricao: "A principal diferença das células procariontes em relação às eucariontes é a ausência de um núcleo que separe o material genético do citoplasma. Os seres que apresentam células procariontes são, em sua grande maioria, unicelulares.",
         img: "imgs/organelas/Procarionte.png",
         x: "22%",
         y: "10%",
@@ -139,7 +139,7 @@ let arrOrganelas = [
     },
     {
         nome: "Núcleo",
-        descricao: "Contém o material genético matriz da célula",
+        descricao: "É separado do citoplasma pelo envoltório nuclear, se comunicando com o mesmo por meio dos chamados poros nucleares. O material genético da célula (DNA) se localiza no núcleo.",
         img: "imgs/organelas/Nucleo.png",
         x: "45%",
         y: "35%",
@@ -148,7 +148,7 @@ let arrOrganelas = [
     },
     {
         nome: "Ribossomo",
-        descricao: "Síntese de proteínas",
+        descricao: "Os ribossomos ou ribossomas são as organelas responsáveis pela síntese de proteínas, tanto nas células eucariontes quanto nas procariontes. Podem ser encontrados tanto livres no citoplasma quanto aderidos ao retículo endoplasmático.",
         img: "imgs/organelas/Ribossomo.png",
         x: "32%",
         y: "55%",
@@ -157,7 +157,7 @@ let arrOrganelas = [
     },
     {
         nome: "Centríolo",
-        descricao: "Participa ativamente na divisão celular",
+        descricao: "Geralmente encontrados aos pares, os centríolos são compostos por 9 grupos de 3 microtúbulos cada, formando uma espécie de cilindro. Participam ativamente da divisão celular.",
         img: "imgs/organelas/Centriolo.png",
         x: "35%",
         y: "70%",
@@ -166,7 +166,7 @@ let arrOrganelas = [
     },
     {
         nome: "Vacúolos",
-        descricao: "Armazena substâncias",
+        descricao: "Muito abundantes nas células vegetais, os vacúolos podem ser de 3 tipos diferentes: de armazenamento, digestórios ou pulsáteis (eliminar o excesso de água da célula por osmose).",
         img: "imgs/organelas/Vacuolo.png",
         x: "35%",
         y: "30%",
@@ -175,7 +175,7 @@ let arrOrganelas = [
     },
     {
         nome: "Lisossomos",
-        descricao: "Realizam a digestão celular",
+        descricao: "Presentes apenas nas células animais, os lisossomos realizam a digestão celular, além de desempenharem uma função de reciclagem de antigos componentes da célula, por meio da autofagia.",
         img: "imgs/organelas/Lisossomo.png",
         x: "35%",
         y: "45%",
@@ -184,7 +184,7 @@ let arrOrganelas = [
     },
     {
         nome: "Reticulo endoplasmatico rugoso",
-        descricao: "Processam e transportam moléculas, torna a síntese de proteínas mais eficiente",
+        descricao: "Processam e transportam moléculas, além de tornar a síntese de proteínas mais eficiente.",
         img: "imgs/organelas/Reticulo_endoplasmatico_rugoso.png",
         x: "48%",
         y: "55%",
@@ -193,7 +193,7 @@ let arrOrganelas = [
     },
     {
         nome: "Reticulo endoplasmatico liso",
-        descricao: "Processam e transportam moléculas, participa da produção de lipídios",
+        descricao: "Processam e transportam moléculas. Está envolvido na síntese de lípidios, bem como na desintoxicação celular e no transporte intracelular. Presente em grandes quantidades no fígado.",
         img: "imgs/organelas/Reticulo_endoplasmatico_liso.png",
         x: "50%",
         y: "20%",
@@ -202,7 +202,7 @@ let arrOrganelas = [
     },
     {
         nome: "Complexo de golgi",
-        descricao: "Secreta substâncias para o interior e exterior da célula",
+        descricao: "Sua função primordial é a secreção de proteínas ribossomáticas e a sua distribuição por entre essas vesículas. Funciona como centro de armazenamento, transformação, empacotamento e remessa de substâncias.",
         img: "imgs/organelas/Complexo_de_golgi.png",
         x: "61%",
         y: "35%",
@@ -211,7 +211,7 @@ let arrOrganelas = [
     },
     {
         nome: "Mitocôndria",
-        descricao: "Realiza respiração celular",
+        descricao: "Realiza a respiração celular, processando a glicose e convertendo-a em energia sob a forma de ATP. Está presente em grandes quantidades no coração, sistema nervoso e sistema muscular. A teoria da endossimbiose diz que a mitocôndria, assim como o cloroplasto, era um ser de vida livre e se tornou uma organela por motivo de uma associação simbiótica entre ele e a célula.",
         img: "imgs/organelas/Mitocondria.png",
         x: "38%",
         y: "60%",
@@ -220,7 +220,7 @@ let arrOrganelas = [
     },
     {
         nome: "Cloroplasto",
-        descricao: "Realizam fotossíntese",
+        descricao: "Organela responsável por dar a cor verde às plantas, visto que é nela que está a clorofila. No cloroplasto é que se realiza a fotossíntese. A teoria da endossimbiose diz que o cloroplasto, assim como a mitocôndria, era um ser de vida livre e se tornou uma organela por motivo de uma associação simbiótica entre ele e a célula.",
         img: "imgs/organelas/Cloroplasto.png",
         x: "60%",
         y: "48%",
