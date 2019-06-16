@@ -271,10 +271,6 @@ for(let celula of arrCelulas){
     }
 }
 
-document.getElementById('fechar').addEventListener('click',function(){
-    document.getElementById('sobreposicao').style.display = "none";
-});
-
 document.getElementById("sobreposicao").addEventListener('click',function(){
     document.getElementById('sobreposicao').style.display = "none";
 });
