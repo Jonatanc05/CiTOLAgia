@@ -111,6 +111,33 @@ function slideInFrom(element, originPos){
 //Organelas clicáveis
 let arrOrganelas = [
     {
+        nome: "Membrana Citoplasmatica",
+        descricao: "Delimita a célula e realiza troca com o meio externo e interno",
+        img: "imgs/organelas/Membrana_citoplasmatica.png",
+        x: "25%",
+        y: "15%",
+        w: "50%",
+        celula: "animal"
+    },
+    {
+        nome: "Parede Celular",
+        descricao: "Manutenção de forma e confere rigidez, pode ser de quitina ou celulose",
+        img: "imgs/organelas/Parede_celular.png",
+        x: "25%",
+        y: "15%",
+        w: "50%",
+        celula: "vegetal"
+    },
+    {
+        nome: "Celula Procarionte",
+        descricao: "PESQUISAR",
+        img: "imgs/organelas/Procarionte.png",
+        x: "22%",
+        y: "10%",
+        w: "55%",
+        celula: "procarionte"
+    },
+    {
         nome: "Núcleo",
         descricao: "Contém o material genético matriz da célula",
         img: "imgs/organelas/Nucleo.png",
