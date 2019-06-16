@@ -266,12 +266,15 @@ for(let celula of arrCelulas){
 
                 document.getElementById(celula.nome).appendChild(newImg);
 
-                let fechar = document.getElementById('fechar');
-                fechar.addEventListener('click',function(){
-                    let janela = document.getElementById('sobreposicao');
-                    janela.style.display = "none";
-                })
             }
         }
     }
 }
+
+document.getElementById('fechar').addEventListener('click',function(){
+    document.getElementById('sobreposicao').style.display = "none";
+});
+
+document.getElementById("sobreposicao").addEventListener('click',function(){
+    document.getElementById('sobreposicao').style.display = "none";
+});
