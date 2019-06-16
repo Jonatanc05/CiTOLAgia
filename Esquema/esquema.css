@@ -50,6 +50,11 @@ h1{
 .esquema > img{
 	position: absolute;
 }
+.esquema > img:not(:nth-child(2)):hover{
+	cursor: pointer;
+	-webkit-filter: saturate(2);
+	filter: saturate(2);
+}
 .setaDiv{
 	width: 10%;
 	text-align: center;
