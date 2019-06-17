@@ -50,3 +50,8 @@ body{
 #voltar:hover{
   cursor: pointer;
 }
+
+p{
+  padding: 2% 2%;
+  margin: 0;
+}
