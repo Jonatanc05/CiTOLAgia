@@ -6,10 +6,6 @@ body{
   background-position: center 0;
   background-attachment: fixed;
   font-family: 'Chewy', cursive;
-  transition: 400ms ease all;
-}
-div{
-  text-align: center;
 }
 
 #divGrade{
@@ -53,4 +49,9 @@ div{
 }
 #voltar:hover{
   cursor: pointer;
+}
+
+p{
+  padding: 2% 2%;
+  margin: 0;
 }

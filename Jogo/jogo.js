@@ -7,12 +7,12 @@ let canClick = true; // Se a carta pode ser clicada ou não
 
 let arrOrganelas = [
     {
-        Nome: "Ectoplasma",
-        Descricao: "Parte mais externa do citoplasma, é encontrado na forma de gel (gelatinoso)"
+        Nome: "Reticulo_endoplasmatico_liso",
+        Descricao: "Processam e transportam moléculas, participa da produção de lipídios"
     },
     {
-        Nome: "Endoplasma",
-        Descricao: "Parte mais interna do citoplasma,é encontrado geralmente na forma de sol (liquido)"
+        Nome: "Citoplasma",
+        Descricao: "Preenche todo interior da célula e imerge as organelas"
     },
     {
         Nome: "Ribossomo",
@@ -39,8 +39,8 @@ let arrOrganelas = [
         Descricao: "Realizam a digestão celular"
     },
     {
-        Nome: "Reticulo_endoplasmatico",
-        Descricao: "Processam e transportam moléculas, podem produzir proteínas também"
+        Nome: "Reticulo_endoplasmatico_rugoso",
+        Descricao: "Processam e transportam moléculas, torna a síntese de proteínas mais eficiente"
     },
     {
         Nome: "Complexo_de_golgi",
@@ -84,6 +84,8 @@ function newgame(){
         el.setAttribute('id', 'carta'+i);
         el.setAttribute('class', 'elemento');
         el.setAttribute('alt', arrCartao[i].Nome);
+        el.style.backgroundRepeat =  "no-repeat";
+        el.style.backgroundSize =  "100% 100%";
         if(arrCartao[i].img == undefined){ // Caso a carta em questão seja de descrição, cria um 'p' e o coloca dentro da div respectiva da carta
             let p = document.createElement('p');
             p.innerText = arrCartao[i].descricao;
@@ -96,9 +98,6 @@ function newgame(){
         }
         el.addEventListener("click", function(e){
             let id = e.currentTarget.getAttribute('id').substr(5);
-
-            //console.log(id);
-            //console.log(arrCartao[id]);
             if(arrCartao[id].virada == false){
                 arrCartao[id].virada = true;
                 verif = 0;
