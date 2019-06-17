@@ -180,7 +180,7 @@ let arrOrganelas = [
         x: "35%",
         y: "45%",
         w: "6%",
-        celula: "eucarionte"
+        celula: "animal"
     },
     {
         nome: "Reticulo endoplasmatico rugoso",
