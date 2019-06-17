@@ -5,6 +5,7 @@ body{
   background-size: cover; 
   background-position: center 0;
   background-attachment: fixed;
+  font-family: 'Chewy', cursive;
 }
 
 #divGrade{
