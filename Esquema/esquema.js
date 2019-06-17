@@ -150,9 +150,9 @@ let arrOrganelas = [
         nome: "Ribossomo",
         descricao: "Os ribossomos ou ribossomas são as organelas responsáveis pela síntese de proteínas, tanto nas células eucariontes quanto nas procariontes. Podem ser encontrados tanto livres no citoplasma quanto aderidos ao retículo endoplasmático.",
         img: "imgs/organelas/Ribossomo.png",
-        x: "32%",
-        y: "55%",
-        w: "5%",
+        x: "40%",
+        y: "50%",
+        w: "2%",
         celula: "todas"
     },
     {
@@ -177,8 +177,8 @@ let arrOrganelas = [
         nome: "Lisossomos",
         descricao: "Presentes apenas nas células animais, os lisossomos realizam a digestão celular, além de desempenharem uma função de reciclagem de antigos componentes da célula, por meio da autofagia.",
         img: "imgs/organelas/Lisossomo.png",
-        x: "35%",
-        y: "45%",
+        x: "32%",
+        y: "55%",
         w: "6%",
         celula: "animal"
     },
